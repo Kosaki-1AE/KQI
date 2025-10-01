@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>WCP Flow Chat — 自走×オウム返し（WebLLM統合版）</title>
+<style>
+  :root { --bg:#0b1020; --panel:#12182c; --muted:#7a88b8; --accent:#8ab4ff; --ok:#89ffa3; --warn:#ffd480;}
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans JP", "Hiragino Sans", "Yu Gothic UI", "Meiryo", sans-serif; background: linear-gradient(180deg,#0b1020, #0f1530 55%, #0b1020); color:#e6ebff; }
+  .wrap { max-width: 960px; margin: 24px auto; padding: 0 16px; }
+  header { display:flex; align-items:center; justify-content:space-between; margin-bottom: 16px;}
+  h1 { font-size: 20px; margin: 0; display:flex; gap:8px; align-items:center;}
+  h1 .dot { width:10px; height:10px; border-radius:999px; background: var(--ok); box-shadow:0 0 12px var(--ok); }
+  .card { background: linear-gradient(180deg, #12182c 0%, #0f1530 100%); border:1px solid #1d2747; border-radius: 14px; box-shadow: 0 6px 18px rgba(0,0,0,.35); }
+  .controls { display:grid; grid-template-columns: 1fr auto; gap:12px; padding: 14px; border-bottom: 1px solid #1a2242; }
+  .controls .row { display:flex; gap:10px; align-items:center; flex-wrap:wrap;}
+  .btn { background:#1a2242; border:1px solid #24305c; color:#e6ebff; padding:8px 12px; border-radius:10px; cursor:pointer; transition:.15s; }
+  .btn:hover { background:#24305c; }
+  .btn.ghost { background:transparent; border-color:#2a376b; }
+  .btn.warn { border-color:#5c3f24; color:#ffd9a8; }
+  .btn.ok { border-color:#2e6b4a; color:#9effb8; }
+  .toggle { display:flex; align-items:center; gap:8px; color:#cfe0ff;}
+  .toggle input { transform: scale(1.2); }
+  .slider { display:flex; align-items:center; gap:8px; color:#c7d2ff; font-size: 13px; }
+  .slider input[type="range"] { width: 200px; }
+  .chat { padding: 12px; max-height: 60vh; overflow:auto; display:flex; flex-direction:column; gap:10px; }
+  .msg { display:flex; gap:10px; align-items:flex-start; }
+  .msg .av { width:28px; height:28px; border-radius:999px; background:#20306a; display:flex; align-items:center; justify-content:center; font-size:14px; color:#acc4ff; border:1px solid #2a3a76; }
+  .msg.you .av { background:#2a3d28; border-color:#395a37; color:#b5f7bb; }
+  .bubble { padding:10px 12px; border-radius:12px; border:1px solid #223066; background: #141a34; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02); }
+  .msg.you .bubble { background:#152230; border-color:#1d374e; }
+  .meta { font-size:12px; color:#9fb1e9; opacity:.85; margin-top:4px; }
+  .echo { color:#ffdca8; }
+  .inputbar { display:flex; gap:10px; padding: 12px; border-top: 1px solid #1a2242; }
+  .inputbar input[type="text"] { flex:1; background:#0f1428; border:1px solid #1b2344; color:#e6ebff; border-radius:10px; padding:10px 12px; outline:none; }
+  .pill { font-size:12px; color:#a9bcee; padding:2px 8px; border:1px solid #2a376b; border-radius:999px; }
+  .small { font-size: 12px; color:var(--muted); }
+  .sep { height:1px; background: linear-gradient(90deg, transparent, #1c2547, transparent); margin: 6px 0; }
+  .kvs { display:flex; gap:10px; flex-wrap:wrap; }
+  .kv { font-size: 12px; color:#b5c9ff; background:#0c1330; border:1px solid #24305c; padding:4px 8px; border-radius: 999px;}
+  .msg.sys { opacity:.75; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1><span class="dot"></span> WCP Flow Chat <span class="small">— 自走 × オウム返し × 即応 × LLM</span></h1>
+    <div class="kvs" id="kvs"></div>
+  </header>
+
+  <div class="card">
+    <div class="controls">
+      <div class="row">
+        <button class="btn ok" id="btnStart">自走スタート</button>
+        <button class="btn ghost" id="btnStop">停止</button>
+        <button class="btn warn" id="btnClear">ログ消す</button>
+        <label class="toggle"><input type="checkbox" id="parrot" checked />入力開始でオウム返し</label>
+        <label class="toggle"><input type="checkbox" id="persist" checked />流れ保存（localStorage）</label>
+        <span class="pill" id="llmStat">LLM: init...</span>
+      </div>
+      <div class="row">
+        <div class="slider">
+          テンポ: <span id="tempoVal">0.8–2.0s</span>
+          <input type="range" id="tempo" min="3" max="50" value="16" />
+        </div>
+        <div class="slider">
+          ひらめきσ: <span id="sigmaVal">0.40</span>
+          <input type="range" id="sigma" min="5" max="120" value="40" />
+        </div>
+      </div>
+    </div>
+
+    <div class="chat" id="chat"></div>
+
+    <div class="inputbar">
+      <input type="text" id="msg" placeholder="ここに入力（最初の1文字で即オウム返し）" />
+      <button class="btn" id="send">送信</button>
+    </div>
+  </div>
+</div>
+
+<script type="module">
+  import * as webllm from "https://esm.run/@mlc-ai/web-llm";
+  const modelId = "Llama-3.1-8B-Instruct-q4f32_1-MLC";
+  const statEl = document.getElementById('llmStat');
+  let engine = null, ready = false;
+  function setStat(txt){ statEl.textContent = txt; }
+  try{
+    setStat("LLM: 準備中…");
+    engine = await webllm.CreateMLCEngine(modelId, {
+      initProgressCallback: (p) => {
+        const pct = Math.floor((p.progress||0)*100);
+        setStat(`LLM: ${p.text || "loading"} ${pct}%`);
+      }
+    });
+    ready = true; setStat("LLM: ready ✔");
+  }catch(e){ console.error(e); ready = false; setStat("LLM: unavailable — 既定ロジック使用"); }
+  async function askLLM(text){
+    if(!ready) throw new Error("LLM not ready");
+    const messages=[
+      {role:"system",content:"あなたは相手の流れを汲んで、簡潔に1〜2文で返すアシスタントです。砕けた日本語。"},
+      {role:"user",content:text}
+    ];
+    const res = await engine.chat.completions.create({ messages });
+    return res.choices?.[0]?.message?.content || "(no content)";
+  }
+  window.__webllm = { askLLM, isReady: ()=>ready };
+</script>
+
+<script>
+function randn(){let u=1-Math.random(),v=1-Math.random();return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v);}
+function sigmoid(x){return 1/(1+Math.exp(-x));}
+function logisticNoise(p,sigma){p=Math.min(Math.max(p,1e-12),1-1e-12);let z=Math.log(p/(1-p))+randn()*sigma;return 1/(1+Math.exp(-z));}
+function dot2(a,b){return a[0]*b[0]+a[1]*b[1];}
+
+class Core{
+  constructor(D=6){this.D=D;this.W=[...Array(D)].map(()=>Array(D).fill(0).map(()=>randn()*0.8));this.b=Array(D).fill(0).map(()=>randn()*0.2);}
+  stim(){return Array(this.D).fill(0).map(()=>randn());}
+  silu(x){return x*sigmoid(x);} neg_silu(x){return -this.silu(-x);}
+  willEvent(x,theta,tau,sigma){
+    const D=this.D;const z=Array(D).fill(0).map((_,j)=>{let s=this.b[j];for(let i=0;i<D;i++)s+=x[i]*this.W[i][j];return s;});
+    const pos=z.map(v=>this.silu(v)),neg=z.map(v=>this.neg_silu(v));
+    const posPart=pos.map(v=>Math.max(0,v)),negStr=neg.map(v=>Math.max(0,-Math.min(0,v)));
+    const posSum=posPart.reduce((a,b)=>a+b,0),negSum=negStr.reduce((a,b)=>a+b,0);
+    const delta=posSum-negSum;let p=sigmoid(delta/Math.max(tau,1e-6));let p_hat=logisticNoise(p,sigma);
+    return {delta,p_hat,commit:p_hat>=theta,polarity:(posSum>=negSum)?1:-1};
+  }
+}
+
+class HashEncoder{constructor(dim=256){this.dim=dim;this.signs=Array(dim).fill(0).map(()=>Math.random()<0.5?-1:1);}vec(t){const v=new Float32Array(this.dim);const toks=(t||"").split(/\s+/).filter(Boolean);for(const tok of toks){const h=Math.abs(HashEncoder._hash(tok))%this.dim;v[h]+=this.signs[h];}let s=0;for(let i=0;i<this.dim;i++)s+=v[i]*v[i];s=Math.sqrt(s)||1;for(let i=0;i<this.dim;i++)v[i]/=s;return v;}static _hash(str){let h=5381;for(let i=0;i<str.length;i++)h=((h<<5)+h)+str.charCodeAt(i);return h|0;}}
+class FlowHead{constructor(inDim=256,lr=0.2){this.inDim=inDim;this.lr=lr;this.W=[...Array(inDim)].map(()=>[randn()*0.1,randn()*0.1]);}
+  predict(m){let y0=0,y1=0;for(let i=0;i<this.inDim;i++){y0+=m[i]*this.W[i][0];y1+=m[i]*this.W[i][1];}const n=Math.hypot(y0,y1)||1;return [y0/n,y1/n];}
+  update(m,t,p,g=1.0){const g0=(t[0]-p[0])*g,g1=(t[1]-p[1])*g,lr=this.lr;for(let i=0;i<this.inDim;i++){this.W[i][0]+=lr*m[i]*g0;this.W[i][1]+=lr*m[i]*g1;}}}
+
+class FlowState{
+  constructor(dim=256,theta0=0.60,ema=0.05){this.enc=new HashEncoder(dim);this.head=new FlowHead(dim,0.2);this.lastDir=[0,0];this.theta=theta0;this.thetaEma=ema;}
+  step(msg,baseDelta,decider){const m=this.enc.vec(msg),dHat=this.head.predict(m);const extra=0.4*dot2(dHat,(this.lastDir[0]||this.lastDir[1])?this.lastDir:dHat);
+    const out=decider(baseDelta+extra);if(out.commit){const target=(out.polarity>=0?1:-1),tvec=[target*dHat[0],target*dHat[1]];const gain=1.0+0.5*Math.abs(out.p_hat-this.theta);
+      this.lastDir=[0.8*this.lastDir[0]+0.2*dHat[0],0.8*this.lastDir[1]+0.2*dHat[1]];this.head.update(m,tvec,dHat,gain);}else{const base=(this.lastDir[0]||this.lastDir[1])?this.lastDir:dHat,tvec=[0.5*base[0],0.5*base[1]];
+      this.lastDir=[0.95*this.lastDir[0],0.95*this.lastDir[1]];this.head.update(m,tvec,dHat,0.3);}const goal=0.55,err=(out.commit?1:0)-goal;this.theta=Math.min(0.8,Math.max(0.4,this.theta+(-this.thetaEma)*err));
+    out.thetaNow=this.theta;out.dHat=dHat;return out;}
+}
+
+const chatEl=document.getElementById('chat');
+function addMsg(role,text,meta=""){const row=document.createElement('div');row.className='msg '+role+(meta==='sys'?' sys':'');const av=document.createElement('div');av.className='av';av.textContent=(role==='you'?'Y':'B');
+  const bub=document.createElement('div');bub.className='bubble';const p=document.createElement('div');p.textContent=text;const mt=document.createElement('div');mt.className='meta';mt.innerHTML=meta;
+  bub.appendChild(p);if(meta)bub.appendChild(mt);row.appendChild(av);row.appendChild(bub);chatEl.appendChild(row);chatEl.scrollTop=chatEl.scrollHeight;}
+function setKVs(obj){const kvs=document.getElementById('kvs');kvs.innerHTML='';for(const [k,v] of Object.entries(obj)){const e=document.createElement('div');e.className='kv';e.textContent=`${k}: ${v}`;kvs.appendChild(e);}}
+
+const core=new Core(6);let flow=new FlowState(256,0.60,0.05);let autoOn=false,basePush=0.0,parrot=true,persist=true,sigma=0.40,tempo=[0.8,2.0];
+const candidates=["Stillnessの臨界はどこ？","責任の矢をどう立てる？","反例で揺らして確かめたい。","小さく一歩踏み出す案を出す。","俯瞰して目的を再定義する？"];
+function genReply(pol,p){const strong=p>=0.75;if(pol>=0)return strong?"よし、いこう。次は小さく実験してみよ。":"うん、やってみる方向で。軽めに動くね。";return strong?"今はためよ。材料もう少し集める。":"一旦キープ。検討用の問いを増やす。";}
+function makeDecider(thetaRef){return function(deltaExtra){const x=core.stim(),ev=core.willEvent(x,thetaRef(),1.0,sigma);const p_hat=sigmoid(ev.delta+deltaExtra),commit=p_hat>=thetaRef();return {p_hat,commit,polarity:ev.polarity};};}
+
+function scheduleAuto(){if(!autoOn)return;const ms=(tempo[0]+Math.random()*(tempo[1]-tempo[0]))*1000;setTimeout(async ()=>{if(!autoOn)return;const probe=candidates[Math.floor(Math.random()*candidates.length)];
+  const decider=makeDecider(()=>flow.theta);const out=flow.step(probe,basePush,(d)=>decider(d));if(out.commit){let line=genReply(out.polarity,out.p_hat);try{if(window.__webllm?.isReady())line=await window.__webllm.askLLM(probe);}catch(e){};
+    addMsg('bot',line,`self • p=${out.p_hat.toFixed(2)} θ=${out.thetaNow.toFixed(2)}`);basePush=0.2*basePush+0.08;}else{if(Math.random()<0.25)addMsg('bot',"…内省中（材料待ち）","sys");}
+  saveState();scheduleAuto();},ms);}
+
+function saveState(){if(!persist)return;try{const data={W:flow.head.W,lastDir:flow.lastDir,theta:flow.theta};localStorage.setItem('wcp_state',JSON.stringify(data));}catch(e){}}
+function loadState(){try{const raw=localStorage.getItem('wcp_state');if(!raw)return;const d=JSON.parse(raw);if(d&&d.W&&d.lastDir&&typeof d.theta==='number'){flow.head.W=d.W;flow.lastDir=d.lastDir;flow.theta=d.theta;}}catch(e){}}
+loadState();
+
+const btnStart=document.getElementById('btnStart');const btnStop=document.getElementById('btnStop');const btnClear=document.getElementById('btnClear');const inMsg=document.getElementById('msg');const btnSend=document.getElementById('send');
+const chkParrot=document.getElementById('parrot');const chkPersist=document.getElementById('persist');const tempoR=document.getElementById('tempo');const tempoVal=document.getElementById('tempoVal');const sigmaR=document.getElementById('sigma');const sigmaVal=document.getElementById('sigmaVal');
+function renderKVs(){setKVs({"θ":flow.theta.toFixed(2),"σ":sigma.toFixed(2),"tempo":`${tempo[0]}–${tempo[1]}s`,"parrot":parrot?"ON":"OFF"});}renderKVs();
+btnStart.onclick=()=>{if(!autoOn){autoOn=true;scheduleAuto();addMsg('bot',"自走モード開始。","sys");}};btnStop.onclick=()=>{autoOn=false;addMsg('bot',"停止したよ。","sys");};btnClear.onclick=()=>{chatEl.innerHTML="";};
+chkParrot.onchange=()=>{parrot=chkParrot.checked;renderKVs();};chkPersist.onchange=()=>{persist=chkPersist.checked;if(!persist)localStorage.removeItem('wcp_state');};
+tempoR.oninput=()=>{const v=parseInt(tempoR.value,10);const slow=Math.min(4.0,0.25+v*0.075),fast=Math.max(0.3,slow*0.4);tempo=[(+fast.toFixed(1)),(+slow.toFixed(1))];tempoVal.textContent=`${tempo[0]}–${tempo[1]}s`;renderKVs();};
+sigmaR.oninput=()=>{sigma=(parseInt(sigmaR.value,10)/100);sigmaVal.textContent=sigma.toFixed(2);renderKVs();};
+let echoedOnce=false;inMsg.addEventListener('input',()=>{if(parrot&&!echoedOnce&&inMsg.value.length>=1){addMsg('bot',`「${inMsg.value[0]}…」`,`<span class="echo">parrot</span>`);echoedOnce=true;}});
+btnSend.onclick=sendNow;inMsg.addEventListener('keydown',(e)=>{if(e.key==='Enter'){e.preventDefault();sendNow();}});
+async function sendNow(){const text=inMsg.value.trim();if(!text)return;addMsg('you',text,"you");const decider=makeDecider(()=>flow.theta);const out=flow.step(text,basePush,(d)=>decider(d));let line=genReply(out.polarity,out.p_hat);
+  try{if(window.__webllm?.isReady()){const meta=`polarity=${out.polarity}, p=${out.p_hat.toFixed(2)}, theta=${out.thetaNow.toFixed(2)}`;line=await window.__webllm.askLLM(`相手: ${text}\n内部メタ: ${meta}\n要件: 1〜2文で返答。砕けた日本語。`);}}catch(e){}
+  addMsg('bot',line,`p=${out.p_hat.toFixed(2)} θ=${out.thetaNow.toFixed(2)}`);basePush=0.2*basePush+(out.commit?0.1:-0.02);echoedOnce=false;inMsg.value="";saveState();renderKVs();}
+addMsg('bot',"起動完了。LLMの準備ができたら自動で切替えるよ。まずは気軽に打ってみて〜","sys");
+</script>
+</body>
+</html>
