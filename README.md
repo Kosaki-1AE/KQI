@@ -1,1 +1,1 @@
-# Sensibility-Information-Theory
+# Kansei Quantum Information Theory
