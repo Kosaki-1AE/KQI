@@ -1,0 +1,21 @@
+{
+  "alwaysUpdateLinks": true,
+  "mobileToolbarCommands": [
+    "editor:copy",
+    "editor:paste",
+    "editor:insert-wikilink",
+    "editor:insert-embed",
+    "editor:insert-link",
+    "editor:toggle-bold",
+    "editor:toggle-bullet-list",
+    "editor:toggle-numbered-list",
+    "editor:toggle-italics",
+    "editor:indent-list",
+    "editor:undo",
+    "editor:redo"
+  ],
+  "mobilePullAction": "app:reload",
+  "promptDelete": false,
+  "foldHeading": true,
+  "foldIndent": true
+}

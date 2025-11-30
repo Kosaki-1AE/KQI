@@ -1,0 +1,203 @@
+{
+  "main": {
+    "id": "95c1b1d85dca34c0",
+    "type": "split",
+    "children": [
+      {
+        "id": "9dc9535e94331041",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4ce401aea9fd021f",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "f49f374f03ddf212",
+    "type": "split",
+    "children": [
+      {
+        "id": "f9429f9f789e1ae7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7ac56e527c819724",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "e70b881a8ad7fbc7",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "f29147ae6861fddb",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "9852a9f8a771af92",
+    "type": "split",
+    "children": [
+      {
+        "id": "13ebf53264b59d21",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "74a01cd88d6dbbfb",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "c3b7f04d13aa6f5b",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "806af0c6f5502cb4",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "dda137a4f4bcc527",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "7ac56e527c819724",
+  "lastOpenFiles": [
+    "Student_Age/College_Age/2ndGrade/231027_主権は誰？？.md",
+    "Student_Age/College_Age/2ndGrade/231206_年齢層別最も相応しい表現方法.md",
+    "Student_Age/College_Age/2ndGrade/230508_社会人技術者.md",
+    "Student_Age/College_Age/2ndGrade/240110_依存とは.md",
+    "Student_Age/College_Age/2ndGrade/230608_結果の出し方と親孝行.md",
+    "Student_Age/College_Age/2ndGrade/230914_病気の重さ.md",
+    "Student_Age/College_Age/2ndGrade/240106_俺が好きなこと.md",
+    "Student_Age/College_Age/2ndGrade/231127_公私の真ん中ってどこだ.md",
+    "Student_Age/College_Age/2ndGrade/230723_本当の愛.md",
+    "Student_Age/College_Age/2ndGrade/231010_性癖の確定.md",
+    "Student_Age/College_Age/2ndGrade/231225_嫌われ役.md",
+    "Student_Age/College_Age/2ndGrade/231222_ただただ辛いときは.md",
+    "Student_Age/College_Age/2ndGrade/230602_交尾.md",
+    "Student_Age/College_Age/2ndGrade/240105_カオナシってなんだろか.md",
+    "Student_Age/College_Age/2ndGrade/230910_お笑い.md",
+    "Student_Age/College_Age/2ndGrade/231024_”自問自答”.md",
+    "Student_Age/College_Age/2ndGrade/230526_大人と子供.md",
+    "Student_Age/College_Age/2ndGrade/230603_文章が感情を持つ.md",
+    "Student_Age/College_Age/2ndGrade/230818_パソコンの早打ちができるまで.md",
+    "Student_Age/College_Age/2ndGrade/231125_倉庫.md",
+    "Student_Age/College_Age/2ndGrade/230618_聞き流す.md",
+    "Student_Age/College_Age/2ndGrade/230712_男性脳と女性脳.md",
+    "Student_Age/College_Age/2ndGrade/231201_分かりやすさの定義.md",
+    "Student_Age/College_Age/2ndGrade/231004_大勢と個人.md",
+    "Student_Age/College_Age/2ndGrade/230929part2_何かを達成するには.md",
+    "Student_Age/College_Age/2ndGrade/230426_愛情⇨230619_愛とは.md",
+    "Student_Age/College_Age/Research/Tempo/ReserachEndpoint/研究の一旦の終着点「責任関連」.pdf",
+    "Student_Age/College_Age/Research/Tempo/ReserachEndpoint/研究の一旦の終着点「構成要素」.pdf",
+    "Student_Age/College_Age/Research/Tempo/ReserachEndpoint/研究の一旦の終着地点「終点」.pdf",
+    "Student_Age/College_Age/Research/Tempo/ReserachEndpoint/研究の一旦の終着地点「バロメータ」.pdf",
+    "Student_Age/College_Age/Research/Tempo/ReserachEndpoint/研究の一旦の終着地点「今後」.pdf",
+    "Student_Age/College_Age/Research/Tempo/ReserachEndpoint/研究の一旦の終着地点「ココロ」.pdf",
+    "Student_Age/College_Age/Research/Tempo/ReserachEndpoint/研究の一旦の終着地点「AI」.pdf",
+    "Student_Age/College_Age/Research/Tempo/ReserachEndpoint",
+    "Student_Age/College_Age/Research/Tempo/Left&Right/緩急.pdf",
+    "Student_Age/College_Age/Research/Tempo/Left&Right/「空気感」と「緩急」.pdf"
+  ]
+}
