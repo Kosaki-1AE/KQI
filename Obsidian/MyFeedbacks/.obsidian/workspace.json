@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#計算機科学/PShortcut",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,7 +74,8 @@
               "title": "ブックマーク"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -172,31 +173,31 @@
   },
   "active": "7e701f7efac47f46",
   "lastOpenFiles": [
+    "Student_Age/College_Age/4thGrade/250918_Macでも書き始めますの巻.md",
+    "Student_Age/College_Age/4thGrade/250927_睡眠って凄いかもぉ.md",
+    "Student_Age/College_Age/4thGrade/250924_恋人できない理由が分かっちゃった…。.md",
+    "Student_Age/College_Age/4thGrade/250917_久々の研究室でござんす.md",
+    "251201.md",
+    "Student_Age/College_Age/4thGrade/250507_これぞ真理なのでは？.md",
+    "Student_Age/College_Age/4thGrade/250820_今一度考え直してみた.md",
+    "Student_Age/College_Age/4thGrade/250916_中間発表本番まであと1週間切ってるねん.md",
+    "Student_Age/College_Age/4thGrade/251130_ようやく水に流せるようになった…かなぁ.md",
+    "Student_Age/College_Age/4thGrade/250928_文脈が大切かも.md",
+    "Student_Age/College_Age/4thGrade/251022_多分アルゴリズムver1.0完成.md",
+    "Student_Age/College_Age/4thGrade/250825_Win7治ったァァ.md",
+    "Student_Age/College_Age/4thGrade/250817_ラグラジアン導入の巻.md",
+    "Student_Age/College_Age/4thGrade/250731_予稿終わらんかった.md",
+    "Student_Age/College_Age/4thGrade/250728_たくみたちに送れるやぁつ.md",
+    "Student_Age/College_Age/4thGrade/250724_基礎まで終わったかも.md",
+    "Student_Age/College_Age/4thGrade/250508_一気に感情生成までいけるかもだわww.md",
+    "Student_Age/College_Age/4thGrade/250502_パソコン届いたの巻き(メインこれね).md",
+    "Student_Age/College_Age/4thGrade/250425_低迷期とメモ帳割り込みを削除した件.md",
+    "Student_Age/College_Age/4thGrade/250827_志高めの今日この頃.md",
+    "Student_Age/College_Age/4thGrade/251008_色々考えたこと.md",
+    "Student_Age/College_Age/4thGrade/250908_ようやく環境が確定できるようになったねぇ.md",
+    "Student_Age/College_Age/4thGrade/251126_小テストすっぽかしたの巻(2年生のときのリベンジやるっすわ).md",
     "251201(2).md",
     "251201(1).md",
-    "251201.md",
-    "251201(3).md",
-    "Student_Age/College_Age/4thGrade/251130_ようやく水に流せるようになった…かなぁ.md",
-    "251130_ようやく水に流せるようになった…かなぁ.md",
-    "251130.md",
-    "Student_Age/College_Age/4thGrade/251129_学べたことまぁまぁあるんだよなぁ…。.md",
-    "251129_学べたことまぁまぁあるんだよなぁ…。.md",
-    "Student_Age/College_Age/4thGrade/251128_明日飛祭本番でーす.md",
-    "251128_明日飛祭本番でーす.md",
-    "絶対見ろ.md",
-    "251129.md",
-    "251128.md",
-    "Student_Age/College_Age/4thGrade/251127_割とスピに近づいてるぅ.md",
-    "251128(1).md",
-    "251128(2).md",
-    "251128(3).md",
-    "251128(4).md",
-    "251128(5).md",
-    "251127(2).md",
-    "251127.md",
-    "251127(1).md",
-    "Student_Age/College_Age/4thGrade/251126_小テストすっぽかしたの巻(2年生のときのリベンジやるっすわ).md",
-    "Student_Age/College_Age/4thGrade/251125_論文の構成要素.md",
-    "251126(12).md"
+    "251201(3).md"
   ]
 }
