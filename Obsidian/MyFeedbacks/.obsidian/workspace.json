@@ -74,8 +74,7 @@
               "title": "ブックマーク"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -171,7 +170,7 @@
       "bases:Create new base": false
     }
   },
-  "active": "7e701f7efac47f46",
+  "active": "d680568bab4e3ce2",
   "lastOpenFiles": [
     "Student_Age/College_Age/4thGrade/250430_我爆誕の巻.md",
     "251201.md",
