@@ -35,8 +35,7 @@
               "title": "251202"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -175,7 +174,6 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "obsidian-git:Open Git source control": false,
       "switcher:クイックスイッチャーを開く": false,
       "graph:グラフビューを開く": false,
       "canvas:新規キャンバスを作成": false,
@@ -185,7 +183,7 @@
       "bases:Create new base": false
     }
   },
-  "active": "40854db1a801eeed",
+  "active": "7e701f7efac47f46",
   "lastOpenFiles": [
     "251202.md",
     "251201.md",
