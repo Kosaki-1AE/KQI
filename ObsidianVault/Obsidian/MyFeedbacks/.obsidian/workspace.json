@@ -11,14 +11,10 @@
             "id": "126714985bd2b1e2",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "251203.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "251203"
+              "title": "新規タブ"
             }
           }
         ]
@@ -171,8 +167,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "126714985bd2b1e2",
+  "active": "d680568bab4e3ce2",
   "lastOpenFiles": [
+    "Images/構築までの流れ.mdZone.Identifier",
+    "Images/構築までの流れ.md",
+    "Images",
     "251202.md",
     "251203.md",
     "Student_Age/College_Age/4thGrade/251201_Ubuntuで俺の理論を完全に再現したいねんな.md",
@@ -197,8 +196,6 @@
     "Student_Age/College_Age/4thGrade/250731_予稿終わらんかった.md",
     "Student_Age/College_Age/4thGrade/251004_多分これで感性情報を持ってこれそう(2).md",
     "Student_Age/College_Age/4thGrade/250918_Macでも書き始めますの巻.md",
-    "Student_Age/College_Age/4thGrade/250727_俺のスタイルが答えさ.md",
-    "Student_Age/College_Age/4thGrade/250628_「一意な文章」の書き方って…_.md",
-    "Student_Age/College_Age/4thGrade/250626_受け流し方.md"
+    "Student_Age/College_Age/4thGrade/250727_俺のスタイルが答えさ.md"
   ]
 }
