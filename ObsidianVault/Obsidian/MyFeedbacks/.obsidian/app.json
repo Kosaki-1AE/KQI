@@ -1,6 +1,6 @@
 {
   "promptDelete": false,
-  "newFileLocation": "folder",
-  "newFileFolderPath": "/ObsidianVault/Obsidian/MyFeedbacks",
-  "attachmentFolderPath": "/ObsidianVault/Obsidian/MyFeedbacks/Resources/Audios"
+  "newFileLocation": "root",
+  "newFileFolderPath": "",
+  "attachmentFolderPath": "/"
 }
