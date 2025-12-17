@@ -1,0 +1,199 @@
+{
+  "main": {
+    "id": "7fe3b49ecb2c4bbb",
+    "type": "split",
+    "children": [
+      {
+        "id": "f3c585028ba2c5eb",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "29e0bb768030bfc4",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "新規タブ"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "5506137167510ba2",
+    "type": "split",
+    "children": [
+      {
+        "id": "2264092ceb13a947",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d680568bab4e3ce2",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "ファイルエクスプローラ"
+            }
+          },
+          {
+            "id": "8bfe753ceff21c86",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:#計算機科学/Mechanism",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "検索"
+            }
+          },
+          {
+            "id": "c3040ac37e3dde14",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "ブックマーク"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "5300abcc45e80783",
+    "type": "split",
+    "children": [
+      {
+        "id": "2473498dfccbbc3a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "942e8eb275a68fe0",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "251120.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "251120へのバックリンク"
+            }
+          },
+          {
+            "id": "c4a96db5b48aef80",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "251120.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "251120からのアウトゴーイングリンク"
+            }
+          },
+          {
+            "id": "95bd645b09a58760",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "タグ"
+            }
+          },
+          {
+            "id": "14b0c250d8a0bfc9",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "251120.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "251120のアウトライン"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:クイックスイッチャーを開く": false,
+      "graph:グラフビューを開く": false,
+      "canvas:新規キャンバスを作成": false,
+      "daily-notes:今日のデイリーノートを開く": false,
+      "templates:テンプレートを挿入": false,
+      "command-palette:コマンドパレットを開く": false,
+      "bases:Create new base": false,
+      "audio-recorder:録音の開始/停止": false
+    }
+  },
+  "active": "29e0bb768030bfc4",
+  "lastOpenFiles": [
+    "Student_Age/College_Age/4thGrade/251126_小テストすっぽかしたの巻(2年生のときのリベンジやるっすわ).md",
+    "Student_Age/College_Age/4thGrade/251022_多分アルゴリズムver1.0完成.md",
+    "251207_.md",
+    "Student_Age/College_Age/4thGrade/250927_睡眠って凄いかもぉ.md",
+    "Student_Age/College_Age/4thGrade/250924_恋人できない理由が分かっちゃった…。.md",
+    "Student_Age/College_Age/4thGrade/250918_Macでも書き始めますの巻.md",
+    "Student_Age/College_Age/4thGrade/250917_久々の研究室でござんす.md",
+    "Student_Age/College_Age/4thGrade/250820_今一度考え直してみた.md",
+    "Student_Age/College_Age/4thGrade/250425_低迷期とメモ帳割り込みを削除した件.md",
+    "Student_Age/College_Age/4thGrade/251204_Ubuntuとの一体化....。.md",
+    "Student_Age/College_Age/4thGrade/250928_文脈が大切かも.md",
+    "Student_Age/College_Age/4thGrade/250908_ようやく環境が確定できるようになったねぇ.md",
+    "Student_Age/College_Age/4thGrade/250508_一気に感情生成までいけるかもだわww.md",
+    "Student_Age/College_Age/4thGrade/250728_たくみたちに送れるやぁつ.md",
+    "Student_Age/College_Age/4thGrade/250502_パソコン届いたの巻き(メインこれね).md",
+    "Student_Age/College_Age/4thGrade/250507_これぞ真理なのでは？.md",
+    "Student_Age/College_Age/4thGrade/251010_工大祭終了後すぐにアニメーション募集すっべ.md",
+    "Student_Age/College_Age/4thGrade/250926_学校始まったー頑張らな.....。.md",
+    "Student_Age/College_Age/4thGrade/250816_UP本番やぁぁぁぁ！！！！！.md",
+    "Student_Age/College_Age/4thGrade/250811_1日連、頑張りますかぁ。.md",
+    "Student_Age/College_Age/4thGrade/250805_スライドも終わらせなきゃ！！.md",
+    "Student_Age/College_Age/4thGrade/250804_スライドの構図は決まったかも.md",
+    "Student_Age/College_Age/4thGrade/250725_回答案あったっぽい.md",
+    "Student_Age/College_Age/4thGrade/250701_エントロピー++.md",
+    "Student_Age/College_Age/4thGrade/250628_「一意な文章」の書き方って…_.md",
+    "Student_Age/College_Age/4thGrade/250524_春パでござんした.md",
+    "Student_Age/Google_Age"
+  ]
+}

@@ -1,0 +1,207 @@
+{
+  "main": {
+    "id": "95c1b1d85dca34c0",
+    "type": "split",
+    "children": [
+      {
+        "id": "9dc9535e94331041",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4ce401aea9fd021f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Student_Age/College_Age/4thGrade/250623_.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "250623_"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "f49f374f03ddf212",
+    "type": "split",
+    "children": [
+      {
+        "id": "f9429f9f789e1ae7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7ac56e527c819724",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "e70b881a8ad7fbc7",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "f29147ae6861fddb",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "9852a9f8a771af92",
+    "type": "split",
+    "children": [
+      {
+        "id": "13ebf53264b59d21",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "74a01cd88d6dbbfb",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "c3b7f04d13aa6f5b",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "806af0c6f5502cb4",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "dda137a4f4bcc527",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "4ce401aea9fd021f",
+  "lastOpenFiles": [
+    "Student_Age/College_Age/2ndGrade/231218_『自分のやり方』の発見.md",
+    "Student_Age/College_Age/2ndGrade/230423_日本に足りないもの.md",
+    "Student_Age/College_Age/2ndGrade/230714_マイクラのやり方（基本中の基本編）.md",
+    "Student_Age/College_Age/2ndGrade/230915～16_ゲームの存在意義.md",
+    "Student_Age/College_Age/2ndGrade/231017_無理の仕方.md",
+    "Student_Age/College_Age/2ndGrade/230927_今後生きていくための考察.md",
+    "Student_Age/College_Age/2ndGrade/230721_Re・意識の持ち方(意識について ver 2.0).md",
+    "Student_Age/College_Age/2ndGrade/231211_負けられるようになるには.md",
+    "Student_Age/College_Age/2ndGrade/231225_相手の時間の合わせ方.md",
+    "Student_Age/College_Age/2ndGrade/231221_一日でのノルマは決めておかなければならない.md",
+    "Student_Age/College_Age/2ndGrade/230905_飯と睡眠時間.md",
+    "Student_Age/College_Age/2ndGrade/230623_心霊的な部分と心の闇.md",
+    "Student_Age/College_Age/2ndGrade/230929_究極の集中.md",
+    "Student_Age/College_Age/2ndGrade/240123_様々な物事についての構成方法.md",
+    "Student_Age/College_Age/2ndGrade/231120_そもそもなぜ研究しようとしたのか.md",
+    "Student_Age/College_Age/2ndGrade/231110_話し方のコツ.md",
+    "Student_Age/College_Age/2ndGrade/240105_三本のやりを作る.md",
+    "Student_Age/College_Age/2ndGrade/231223_感動が来るタイミング.md",
+    "Student_Age/College_Age/2ndGrade/231006_思考.md",
+    "Student_Age/College_Age/2ndGrade/231104_何に興奮するか.md",
+    "Student_Age/College_Age/2ndGrade/230630～の哲学「『無』の境地」ー無期限にしました.md",
+    "Student_Age/College_Age/2ndGrade/231026_覇気.md",
+    "Student_Age/College_Age/2ndGrade/231223_必ず後悔は残る.md",
+    "Student_Age/College_Age/2ndGrade/230722-23_ryuchellさんの自殺より.md",
+    "Student_Age/College_Age/2ndGrade/231114_処心術について.md",
+    "Student_Age/College_Age/2ndGrade/230421_英語を効率よく勉強する方法.md",
+    "Student_Age/College_Age/Research/Tempo/ReserachEndpoint/研究の一旦の終着点「責任関連」.pdf",
+    "Student_Age/College_Age/Research/Tempo/ReserachEndpoint/研究の一旦の終着点「構成要素」.pdf",
+    "Student_Age/College_Age/Research/Tempo/ReserachEndpoint/研究の一旦の終着地点「終点」.pdf",
+    "Student_Age/College_Age/Research/Tempo/ReserachEndpoint/研究の一旦の終着地点「バロメータ」.pdf",
+    "Student_Age/College_Age/Research/Tempo/ReserachEndpoint/研究の一旦の終着地点「今後」.pdf",
+    "Student_Age/College_Age/Research/Tempo/ReserachEndpoint/研究の一旦の終着地点「ココロ」.pdf",
+    "Student_Age/College_Age/Research/Tempo/ReserachEndpoint/研究の一旦の終着地点「AI」.pdf",
+    "Student_Age/College_Age/Research/Tempo/ReserachEndpoint",
+    "Student_Age/College_Age/Research/Tempo/Left&Right/緩急.pdf",
+    "Student_Age/College_Age/Research/Tempo/Left&Right/「空気感」と「緩急」.pdf"
+  ]
+}
